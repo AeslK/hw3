@@ -7,15 +7,14 @@ class PlacesController < ApplicationController
   def show
     @places = Place.find_by({"id" => params["id"]})
     @posts = Post.where({"place_id" => @places["id"]})
- 
   end
 
   def new
-    @places = Place.all
+    @places = Place.new
   end
 
   def create
-    @places = Place.all
+    @places = Place.new
     @places["name"] = params["place"]["name"]
     @places.save
     redirect_to "/places"

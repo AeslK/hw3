@@ -1,4 +1,4 @@
-<h1>New Post</h1>
+ <h1>New Post</h1>
 
 <%= form_with :model => @posts do |form| %>
   
@@ -6,11 +6,18 @@
     <%= form.label "title", "Title" %>
     <%= form.text_field "title" %>
   </p>
+ <p>
+    <%= form.hidden_field "posted_on" %>
+  </p>
   <p>
     <%= form.label "description", "Description" %>
     <%= form.text_field "description" %>
   </p>
- 
+
+  <p>
+    <%= form.hidden_field "place_id" %>
+  </p>
+
   <%= form.submit %>
 <% end %>
  
